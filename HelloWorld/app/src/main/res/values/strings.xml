@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">HelloWorld</string>
+    <string name="toast_value">Hello World!</string>
+    <string name="add_item">You clicked Add"</string>
+    <string name="remove_item">You clicked remove"</string>
+    <string name="close_item">You clicked close"</string>
+
+</resources>
