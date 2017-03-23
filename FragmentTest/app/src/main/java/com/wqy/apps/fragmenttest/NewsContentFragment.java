@@ -18,15 +18,15 @@ public class NewsContentFragment extends Fragment {
 	@Nullable
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-		view = inflater.inflate(R.layout.new_content_frag, container,false);
+		view = inflater.inflate(R.layout.news_content_frag, container,false);
 		return view;
 	}
 
 	public void refresh(String newsTitle, String newsContent){
 		View visibilityLayout = view.findViewById(R.id.visibility_layout);
 		visibilityLayout.setVisibility(View.VISIBLE);
-		TextView newsTitleText = (TextView) view.findViewById(R.id.new_title);
-		TextView newsContentText = (TextView) view.findViewById(R.id.new_content);
+		TextView newsTitleText = (TextView) view.findViewById(R.id.news_title_frag);
+		TextView newsContentText = (TextView) view.findViewById(R.id.news_content_frag);
 		newsTitleText.setText(newsTitle);
 		newsContentText.setText(newsContent);
 	}
