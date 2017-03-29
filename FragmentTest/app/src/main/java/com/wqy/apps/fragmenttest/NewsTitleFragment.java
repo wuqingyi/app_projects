@@ -34,14 +34,30 @@ public class NewsTitleFragment extends Fragment {
 	}
 }
 
-class NewsTitleRecycleViewAdapter extends RecyclerView.Adapter<>{
+class NewsTitleRecycleViewAdapter extends RecyclerView.Adapter<NewsTitleRecycleViewViewHolder> {
 
+
+	@Override
+	public NewsTitleRecycleViewViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        LayoutInflater.from(parent.getContext()).inflate(R.id.item_news_title,parent,false);
+		return null;
+	}
+
+	@Override
+	public void onBindViewHolder(NewsTitleRecycleViewViewHolder holder, int position) {
+
+	}
+
+	@Override
+	public int getItemCount() {
+		return 0;
+	}
 }
 
 class NewsTitleRecycleViewViewHolder extends RecyclerView.ViewHolder{
 	private TextView tv_title;
 	public NewsTitleRecycleViewViewHolder(View itemView) {
 		super(itemView);
-		tv_title = (TextView)itemView.findViewById(R.id.);
+		tv_title = (TextView)itemView.findViewById(R.id.rv_news_title);
 	}
 }
