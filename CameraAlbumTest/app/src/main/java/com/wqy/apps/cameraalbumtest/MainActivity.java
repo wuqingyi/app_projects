@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		switch (requestCode) {
 			case TAKE_PHOTO:
-				if (requestCode == RESULT_OK) {
+				if (resultCode == RESULT_OK) {
 					try {
 						Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imgUri));
 						imageView.setImageBitmap(bitmap);
@@ -96,9 +96,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 					}
 				}
 				break;
-
 			case FROM_ALBUM:
-
+				if (resultCode == RESULT_OK) {
+					Uri uri = data.getData();
+					Bitmap bitmap = null;
+					try {
+						bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(uri));
+						imageView.setImageBitmap(bitmap);
+					} catch (FileNotFoundException e) {
+						e.printStackTrace();
+					}
+				}
+				break;
 			default:
 				break;
 		}

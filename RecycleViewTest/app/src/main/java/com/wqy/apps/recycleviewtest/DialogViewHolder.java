@@ -11,17 +11,12 @@ import android.widget.TextView;
 
 public class DialogViewHolder extends RecyclerView.ViewHolder {
 
-	LinearLayout ll_msg_left;
-	TextView tv_msg_left;
-
-	LinearLayout ll_msg_right;
-	TextView tv_msg_right;
+	LinearLayout ll_msg;
+	TextView tv_msg;
 
 	public DialogViewHolder(View itemView) {
 		super(itemView);
-		ll_msg_left = (LinearLayout) itemView.findViewById(R.id.ll_msg_left);
-		ll_msg_right = (LinearLayout) itemView.findViewById(R.id.ll_msg_right);
-		tv_msg_left = (TextView) itemView.findViewById(R.id.tv_msg_left);
-		tv_msg_right = (TextView) itemView.findViewById(R.id.tv_msg_right);
+		ll_msg = (LinearLayout) itemView.findViewById(R.id.ll_msg);
+		tv_msg = (TextView) itemView.findViewById(R.id.tv_msg);
 	}
 }

@@ -30,16 +30,16 @@ public class DialogAdapter extends RecyclerView.Adapter<DialogViewHolder> {
 	@Override
 	public void onBindViewHolder(DialogViewHolder holder, int position) {
 		Msg msg = lstMsg.get(position);
-		if(msg.getType() == Msg.TYPE_RECEIVE){
-			holder.ll_msg_left.setVisibility(View.VISIBLE);
-			holder.ll_msg_right.setVisibility(View.GONE);
-            holder.tv_msg_left.setText(msg.getContent());
-		}else if (msg.getType() == Msg.TYPE_SEND){
-            holder.ll_msg_left.setVisibility(View.GONE);
-            holder.ll_msg_right.setVisibility(View.VISIBLE);
-            holder.tv_msg_right.setText(msg.getContent());
+		holder.tv_msg.setText(msg.getContent());
+		if (msg.getType() == Msg.TYPE_RECEIVE) {
+			holder.ll_msg.setBackgroundResource(R.drawable.message_left);
+			LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) holder.ll_msg.getLayoutParams();
+			layoutParams.gravity = Gravity.LEFT;
+		} else if (msg.getType() == Msg.TYPE_SEND) {
+			holder.ll_msg.setBackgroundResource(R.drawable.message_right);
+			LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) holder.ll_msg.getLayoutParams();
+			layoutParams.gravity = Gravity.RIGHT;
 		}
-
 	}
 
 	@Override

@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 		da = new DialogAdapter(lstMsg);
 		rv_dialog.setAdapter(da);
 		et_msg = (EditText) findViewById(R.id.et_input);
+		et_msg.setOnClickListener(this);
 		Button btn_send = (Button) findViewById(R.id.btn_send);
 		btn_send.setOnClickListener(this);
 	}
@@ -42,6 +43,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 				lstMsg.add(msg);
 				da.notifyItemInserted(lstMsg.size() - 1);
 				et_msg.setText("");
+				rv_dialog.scrollToPosition(lstMsg.size() - 1);
+				break;
+			case R.id.et_input:
 				rv_dialog.scrollToPosition(lstMsg.size() - 1);
 				break;
 		}
