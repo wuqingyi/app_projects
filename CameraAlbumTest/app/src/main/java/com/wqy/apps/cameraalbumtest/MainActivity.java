@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivityForResult(intent, FROM_ALBUM);
     }
 
+<<<<<<< HEAD
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
@@ -135,6 +136,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         displayImage(imagePath);
     }
+=======
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		switch (requestCode) {
+			case TAKE_PHOTO:
+				if (resultCode == RESULT_OK) {
+					try {
+						Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imgUri));
+						imageView.setImageBitmap(bitmap);
+					} catch (FileNotFoundException e) {
+						e.printStackTrace();
+					}
+				}
+				break;
+			case FROM_ALBUM:
+				if (resultCode == RESULT_OK) {
+					Uri uri = data.getData();
+					Bitmap bitmap = null;
+					try {
+						bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(uri));
+						imageView.setImageBitmap(bitmap);
+					} catch (FileNotFoundException e) {
+						e.printStackTrace();
+					}
+				}
+				break;
+			default:
+				break;
+		}
+	}
+>>>>>>> 4688df49b2b58e3c78cdb79e7339029328557eff
 
     private void handleImageBeforeKitkat(Intent data) {
         Uri uri = data.getData();
