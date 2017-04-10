@@ -19,11 +19,42 @@
         android:text="@string/create_table"/>
 
     <Button
-        android:text="Button"
+        android:text="@string/query"
+        android:id="@+id/btn_query"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:layout_below="@+id/btn_create_table"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="73dp"
-        android:id="@+id/btn_get_values"/>
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="@string/add"
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_query"
+        android:layout_alignLeft="@+id/btn_query"
+        android:layout_alignStart="@+id/btn_query"
+        android:layout_marginTop="11dp" />
+
+    <Button
+        android:text="@string/update"
+        android:id="@+id/btn_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_add"
+        android:layout_alignLeft="@+id/btn_add"
+        android:layout_alignStart="@+id/btn_add"
+        android:layout_marginTop="17dp" />
+
+    <Button
+        android:text="@string/delete"
+        android:id="@+id/btn_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/btn_update"
+        android:layout_alignLeft="@+id/btn_update"
+        android:layout_alignStart="@+id/btn_update" />
+
 </RelativeLayout>
