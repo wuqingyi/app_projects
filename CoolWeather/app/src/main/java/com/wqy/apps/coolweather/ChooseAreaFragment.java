@@ -55,6 +55,9 @@ public class ChooseAreaFragment extends Fragment {
 	private City selectedCity;
 	private int currentLevel;
 
+	public int getCurrentLevel() {
+		return currentLevel;
+	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -86,7 +89,6 @@ public class ChooseAreaFragment extends Fragment {
 					Intent intent = new Intent(getActivity(), WeatherActivity.class);
 					intent.putExtra("weather_id", weatherId);
 					startActivity(intent);
-					getActivity().finish();
 				}
 			}
 		});
