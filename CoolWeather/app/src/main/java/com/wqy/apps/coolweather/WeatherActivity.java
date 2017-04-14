@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.wqy.apps.coolweather.gson.Forecast;
 import com.wqy.apps.coolweather.gson.Weather;
+import com.wqy.apps.coolweather.util.BaseActivity;
 import com.wqy.apps.coolweather.util.HttpUtil;
 import com.wqy.apps.coolweather.util.Utility;
 
@@ -28,7 +29,7 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class WeatherActivity extends AppCompatActivity {
+public class WeatherActivity extends BaseActivity {
 
 	private ScrollView weatherLayout;
 	private TextView titleCity;
