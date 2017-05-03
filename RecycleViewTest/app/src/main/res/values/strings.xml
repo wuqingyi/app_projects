@@ -1,5 +1,0 @@
-<resources>
-    <string name="app_name">RecycleViewTest</string>
-    <string name="et_input">Input Something</string>
-    <string name="btn_send">Send</string>
-</resources>
